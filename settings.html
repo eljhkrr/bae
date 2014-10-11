@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/holder.js"></script>
+
+
+  </head>
+  <body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavController">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Best Academic Essays</a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search..." size="40">
+                  </div>
+                  <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#">Pricing</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Help <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">How it works</a></li>
+                        <!--<li><a href="#">Another action</a></li>-->
+                        <li><a href="#">Contact Us</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Testimonials</a></li>
+                    </ul>     
+                  </li>
+                </ul>
+                <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+              </div><!-- /.navbar-collapse -->
+          </div>
+        </nav>
+        <!-- end nav -->
+        
+        <section class="header-section row">
+          <div class="col-sm-12 col-md-5 header-box">
+            <div class="thumbnail">
+              <!--<img data-src="holder.js/300x300" alt="...">-->
+              <div class="caption">
+                <h1>Get your research done.</h1>
+                <h1>Get it done right.</h1>
+                <hr/>
+                <p>Professional research services at student prices!</p>
+                <ul>
+                  <li>
+                    <p><img src="images/check.svg" /></p>
+                    Quality<br/>work
+                  </li>
+                  <li>
+                    <p><img src="images/timely.svg" /></p>
+                    Timely<br/>delivery
+                  </li>
+                  <li>
+                    <p><img src="images/creative.svg" /></p>
+                    Creatively<br/>original
+                  </li>
+                </ul>
+                <!--
+                <p>Text</p>
+
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                -->
+              </div>
+            </div>
+          </div>
+          
+        </section>
+
+        <!--
+        <section class="our-numbers row">
+          <h2>Our work so far</h2>
+          
+          <div class="circles row">
+            <div class="col-md-4">
+              <p>active writers</p>
+              <div class="circle" id="circles-1">Writers</div>
+              
+            </div>
+            <div class="col-md-4">
+              <p>completed orders</p>
+              <div class="circle" id="circles-2"></div>
+              
+            </div>
+
+            <div class="col-md-4">
+              <p>active orders</p>
+              <div class="circle" id="circles-3"></div>
+            </div>
+          </div>
+        </section>
+        -->
+        <!--
+        <section class="order-form row">
+            <h2>request your paper now!</h2>
+            <form id="order-form row">
+                <div class="row">
+                    <input type="text" class="" placeholder="Topic of paper" />
+                </div>
+                <div class="row">
+                              <div class="col-md-4">
+                                <label for="type">Type of work:</label>
+                                <select name="type" id="type">
+                                  <option value="1.2">Article</option>
+                                  <option value="1.2">Book Review</option>
+                                  <option value="1.3">Case Analysis</option>
+                                  <option value="1.34">Course Work</option>
+                                  <option value="1.9">Dissertation</option>
+                                  <option value="1.5">Dissertation Editing and Proof Reading</option>
+                                  <option value="1.5">Dissertation - Analysis Chapter</option>
+                                  <option value="1.4">Dissertation - Conclusion Chapter</option>
+                                  <option value="1.3">Dissertation - Introduction Chapter</option>
+                                  <option value="1.3">Dissertation - Literature Review Chapter</option>
+                                  <option value="1.4">Dissertation - Methodology Chapter</option>
+                                  <option value="1.3">Dissertation - Abstract Chapter</option>
+                                  <option value="1.34">Editing and Proof Reading</option>
+                                  <option value="1.25">Essay</option>
+                                  <option value="1.45">Laboratory Report</option>
+                                  <option value="1.25">Scholarship Essay</option>
+                                  <option value="1.3">Movie Review</option>
+                                  <option value="1.2">Multiple Choice Question</option>
+                                  <option value="1.25">Power Point Presentation</option>
+                                  <option value="1.4">Reaction Paper</option>
+                                  <option value="1.35">Research Proposal</option>
+                                  <option value="1.3">Speech</option>
+                                  <option value="1.9">Statistics Project</option>
+                                  <option value="1.5">Term Paper</option>
+                                  <option value="1.8">Thesis</option>
+                                  <option value="1.35">Thesis Proposal</option>
+                                  <option value="1.55">Translation</option>
+                                </select>
+                                <br/>
+                                <label for="academic_level">Academic Level:</label>
+                                <select name="academiclevel" id="academiclevel">
+                                  <option value="1.34">High school</option>
+                                  <option value="1.34">College</option>
+                                  <option value="1.34">Bachelor</option>
+                                  <option value="1.4">Graduate</option>
+                                  <option value="1.5">masters</option>
+                                  <option value="1.6">doctorate</option>
+                                </select>
+                                <br />
+                                <label for="paperstandard">Paper Standard:</label>
+                                <select name="paperstandard" id="paperstandard">
+                                  <option value="1.3">2.2 Class</option>
+                                  <option value="1.5">2.1 Class</option>
+                                  <option value="2">1st Class</option>
+                                </select>
+                                <br/>
+
+                                 <label for="studyarea">Area of Study:</label>
+                              <select name="studyarea" id="studyarea">
+                                <option value="1.2">Art</option>
+                                <option value="1.35">Biology</option>
+                                <option value="1.3">Business</option>
+                                <option value="1.4">Chemistry</option>
+                                <option value="1.33">Communications and Media</option>
+                                <option value="1.4">Creative writing</option>
+                                <option value="1.3">Economics</option>
+                                <option value="1.3">Education</option>
+                                <option value="1.8">Engineering</option>
+                                <option value="1.1">English</option>
+                                <option value="1.1">Ethics</option>
+                                <option value="1.2">History</option>
+                                <option value="1.3">Law</option>
+                                <option value="1.1">Linguistics</option>
+                                <option value="1.1">Literature</option>
+                                <option value="1.2">Management</option>
+                                <option value="1.2">Marketing</option>
+                                <option value="1.25">Mathematics</option>
+                                <option value="1.4">Medicine and Health</option>
+                                <option value="1.1">Nature</option>
+                                <option value="1.15">Philosophy</option>
+                                <option value="1.23">Physics</option>
+                                <option value="1.24">Political Science</option>
+                                <option value="1.13">Psychology</option>
+                                <option value="1.1">Religion and Theology</option>
+                                <option value="1.1">Sociology</option>
+                                <option value="1.3">Technology</option>
+                                <option value="1.11">Tourism</option>
+                                <option value="2">Programming</option>
+                              </select>
+                                
+                            </div>
+
+                          <div class="col-md-4">
+                            <label for="english">English:</label>
+                            <select name="english" id="english">
+                                <option value="1">American English</option>
+                                <option value="1.15">British English</option>
+                            </select>
+
+                            <label for="homework_citation_style">Citation style</label>
+                            <select id="homework_citation_style" name="homework[citation_style]"><option value="">Select the citation style</option>
+                              <option value="MLA">MLA</option>
+                              <option value="APA">APA</option>
+                              <option value="Turabian">Turabian</option>
+                              <option value="Chicago">Chicago</option>
+                              <option value="IEEE">IEEE</option>
+                              <option value="Others">Others</option>
+                            </select>
+
+                            <label for="homework_number_of_sources">Number of sources</label>
+                            <input id="homework_number_of_sources" min="0" name="homework[number_of_sources]" placeholder="If necessary ..." type="number"/>
+                            <label for="homework_number_of_pages">Number of pages</label>
+                            <input id="homework_number_of_pages" min="0" name="homework[number_of_pages]" placeholder="If necessary ..." type="number"/>
+                           
+                           
+                          </div>
+                          <div class="col-md-4">
+                              <label for="homework_delivery_date">Delivery date</label>
+                              <input class="input-append date" id="orderdatetimepicker" name="homework[delivery_date]" required="required" type="text"/>
+                              <label for="homework_budget">Budget</label>
+                              <input id="homework_budget" min="15" name="homework[budget]" placeholder="The Min budget 15USD ..." required="required" type="number"/>
+                          </div>
+                </div>
+      
+                
+                
+            </form>
+            <h3>Total Price</h3>
+            <h3>Discount</h3>
+            <h3>Amount to pay</h3>
+        </section>
+        -->
+        <!--
+        <div class="header-section col-md-12 row">
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img data-src="holder.js/300x300" alt="...">
+              <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>Text</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        -->
+        <section class="section-1 row">
+          
+          <div class="subsection-1">
+            <p>
+              Bacon ipsum dolor sit amet bacon ball tip fatback, pork loin ground round ribeye ham hock landjaeger capicola flank doner frankfurter drumstick cow. Doner ground round jowl swine tri-tip venison shankle shank jerky chuck pork chop drumstick short loin sausage. Hamburger pork pig ball tip. Hamburger meatloaf jowl bresaola tri-tip. Brisket shoulder hamburger sausage andouille. Pork venison rump brisket ham hock prosciutto pork loin shoulder beef ribs capicola bresaola cow meatball jowl shank. T-bone ground round doner beef ribs tail sausage.
+            </p>
+
+            <p>
+              Bacon ipsum dolor sit amet bacon ball tip fatback, pork loin ground round ribeye ham hock landjaeger capicola flank doner frankfurter drumstick cow. Doner ground round jowl swine tri-tip venison shankle shank jerky chuck pork chop drumstick short loin sausage. Hamburger pork pig ball tip. Hamburger meatloaf jowl bresaola tri-tip. Brisket shoulder hamburger sausage andouille. Pork venison rump brisket ham hock prosciutto pork loin shoulder beef ribs capicola bresaola cow meatball jowl shank. T-bone ground round doner beef ribs tail sausage.
+            </p>
+
+            <p>
+              Bacon ipsum dolor sit amet bacon ball tip fatback, pork loin ground round ribeye ham hock landjaeger capicola flank doner frankfurter drumstick cow. Doner ground round jowl swine tri-tip venison shankle shank jerky chuck pork chop drumstick short loin sausage. Hamburger pork pig ball tip. Hamburger meatloaf jowl bresaola tri-tip. Brisket shoulder hamburger sausage andouille. Pork venison rump brisket ham hock prosciutto pork loin shoulder beef ribs capicola bresaola cow meatball jowl shank. T-bone ground round doner beef ribs tail sausage.
+            </p>
+          </div>
+        </section>
+
+        <footer class="row">
+          
+          <div class="row">
+            <div class="col-md-4 payment-icons">
+                <!--<h2><strong>We accept</strong></h2>-->
+                <ul class="payment-icons">
+                  <li><span class="fa fa-cc-mastercard"></span> <span class="fa fa-cc-paypal"></span></li>
+                  <li><span class="fa fa-cc-visa"></span> <span class="fa fa-cc-discover"></span></li>
+                  <li><span class="fa fa-cc-amex"></span> <span class="fa fa-credit-card"></span></li>
+                </ul>               
+            </div>
+
+            <div class="col-md-4">
+                <!--<h2><strong>Services</strong></h2>-->
+                <ul>
+                    <li><a href="#">Terms & conditions</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <ul>
+                  <li><a href="#">Research paper</a></li>
+                  <li><a href="#">Essay writing</a></li>
+                  <li><a href="#">Dissertation</a></li>
+                </ul>
+            </div>
+
+          </div>
+
+          <div class="row footer-line">
+            <div class="col-md-12">
+              <hr/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="social-icons">
+                <li><a href="#" class="fa fa-twitter circle"></a></li>
+                <li><a href="#" class="fa fa-facebook circle"></a></li>
+                <li><a href="#" class="fa fa-google-plus circle"></a></li>
+                <li><a href="#" class="fa fa-linkedin circle"></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-12">
+              <div class="copyright">&copy; 2014</div>
+            </div>
+          </div>
+
+        </footer>
+    </div>
+    <script type="text/javascript" src="js/circles.min.js"></script>
+    <script type="text/javascript">
+      var circle1 = Circles.create({
+          id:         'circles-1',
+          radius:     160,
+          value:      6460,
+          maxValue:   6460,
+          width:      20,
+          text:       function(value){return value;},
+          colors:     ['#D3B6C6', '#1975D1'],
+          duration:   400,
+          wrpClass:   'circles-wrp',
+          textClass:  'circles-text'
+      });
+
+       var circle1 = Circles.create({
+          id:         'circles-2',
+          radius:     160,
+          value:      1897707,
+          maxValue:   1897707,
+          width:      20,
+          text:       function(value){return value;},
+          colors:     ['#D3B6C6', '#FFA347'],
+          duration:   400,
+          wrpClass:   'circles-wrp',
+          textClass:  'circles-text'
+      });
+
+        var circle1 = Circles.create({
+          id:         'circles-3',
+          radius:     160,
+          value:      3897,
+          maxValue:   3897,
+          width:      20,
+          text:       function(value){return value;},
+          colors:     ['#D3B6C6', '#00FF00'],
+          duration:   400,
+          wrpClass:   'circles-wrp',
+          textClass:  'circles-text'
+      });
+
+      //var circle2
+    </script>
+  </body>
+</html>

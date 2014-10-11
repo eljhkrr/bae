@@ -1,0 +1,275 @@
+	
+
+<script type="text/javascript">
+		function calcAmount(){
+			
+			var types = document.getElementById("type");
+			var type = parseFloat(types[types.selectedIndex].value);
+			
+			var academiclevels = document.getElementById("academiclevel");
+			var academiclevel = parseFloat(academiclevels[academiclevels.selectedIndex].value);
+			
+			var paperstandards = document.getElementById('paperstandard');
+			var paperstandard = parseFloat(paperstandards[paperstandards.selectedIndex].value);
+			
+			var englishes = document.getElementById('english');
+			var english = parseFloat(englishes[englishes.selectedIndex].value);
+			
+			var deadlines = document.getElementById('deadline');
+			var deadline = parseFloat(deadlines[deadlines.selectedIndex].value);
+			
+			var studyareas = document.getElementById('studyarea');
+			var studyarea = parseFloat(studyareas[studyareas.selectedIndex].value);
+			
+			var numberofpages = parseFloat(document.getElementById("numberofpages").value );
+			
+			
+			var totalcostperpage = document.getElementById("totalcostperpage");
+				totalcostperpage.value = formatCurrency(type*academiclevel*paperstandard*english*deadline*studyarea+10);
+			var totalcost = document.getElementById("totalcost");
+				totalcost.value = formatCurrency((type*academiclevel*paperstandard*english*deadline*studyarea+10)*numberofpages);
+				
+			var discountapplied = document.getElementById("discountapplied");
+				discountapplied.value = formatCurrency((type*academiclevel*paperstandard*english*deadline*studyarea+10)*numberofpages*<%= calculated_discount %>);
+		
+		}
+		
+	function formatCurrency(strValue)
+{
+	strValue = strValue.toString().replace(/\$|\,/g,'');
+	dblValue = parseFloat(strValue);
+	blnSign = (dblValue == (dblValue = Math.abs(dblValue)));
+	dblValue = Math.floor(dblValue*100+0.50000000001);
+	intCents = dblValue%100;
+	strCents = intCents.toString();
+	dblValue = Math.floor(dblValue/100).toString();
+	if(intCents<10)
+		strCents = "0" + strCents;
+	for (var i = 0; i < Math.floor((dblValue.length-(1+i))/3); i++)
+		dblValue = dblValue.substring(0,dblValue.length-(4*i+3))+','+
+		dblValue.substring(dblValue.length-(4*i+3));
+	return (((blnSign)?'':'-') + '$' + dblValue + '.' + strCents);
+}	
+</script>	
+
+
+
+
+
+
+<form name="form" id="form_calculator" class="form_calculator" onclick="return calcAmount()" method="post">
+   
+   <div class="type one">
+	   	<div class="row">
+	   		<div class="col-sm-4">
+	   			<label for="type">Type:</label>
+	   		</div>
+	   		<div class="col-sm-8">
+	   			<select name="type" id="type">
+					<option value="1.2">Article</option>
+					<option value="1.2">Book Review</option>
+					<option value="1.3">Case Analysis</option>
+					<option value="1.34">Course Work</option>
+					<option value="1.9">Dissertation</option>
+					<option value="1.5">Dissertation Editing and Proof Reading</option>
+					<option value="1.5">Dissertation - Analysis Chapter</option>
+					<option value="1.4">Dissertation - Conclusion Chapter</option>
+					<option value="1.3">Dissertation - Introduction Chapter</option>
+					<option value="1.3">Dissertation - Literature Review Chapter</option>
+					<option value="1.4">Dissertation - Methodology Chapter</option>
+					<option value="1.3">Dissertation - Abstract Chapter</option>
+					<option value="1.34">Editing and Proof Reading</option>
+					<option value="1.25">Essay</option>
+					<option value="1.45">Laboratory Report</option>
+					<option value="1.25">Scholarship Essay</option>
+					<option value="1.3">Movie Review</option>
+					<option value="1.2">Multiple Choice Question</option>
+					<option value="1.25">Power Point Presentation</option>
+					<option value="1.4">Reaction Paper</option>
+					<option value="1.35">Research Proposal</option>
+					<option value="1.3">Speech</option>
+					<option value="1.9">Statistics Project</option>
+					<option value="1.5">Term Paper</option>
+					<option value="1.8">Thesis</option>
+					<option value="1.35">Thesis Proposal</option>
+					<option value="1.55">Translation</option>
+				</select>
+	   		</div>
+	   	</div>   
+    
+	</div>
+	
+	<div class="type two">
+		
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="academic_level">Academic Level:</label>
+			</div>
+			<div class="col-sm-8">
+				<select name="academiclevel" id="academiclevel">		
+					<option value="1.34">High school</option>
+					<option value="1.34">College</option>
+					<option value="1.34">Bachelor</option>
+					<option value="1.4">Graduate</option>
+					<option value="1.5">masters</option>
+					<option value="1.6">doctorate</option>
+				</select>
+			</div>
+		</div>
+    
+	</div>
+	
+	<div class="type one">
+		
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="paperstandard">Paper Standard:</label>
+			</div>
+			<div class="col-sm-8">
+				<select name="paperstandard" id="paperstandard">			
+					<option value="1.3">2.2 Class</option>			
+					<option value="1.5">2.1 Class</option>	
+					<option value="2">1st Class</option>
+				</select>
+			</div>
+		</div>    
+	</div>
+	
+	<div class="type two">
+		
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="english">English:</label>
+			</div>
+			<div class="col-sm-8">
+				<select name="english" id="english">			
+					<option value="1">American English</option>			
+					<option value="1.15">British English</option>					
+				</select>
+			</div>
+		</div>    
+	</div>
+	
+	<div class="type one">
+		
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="deadline">Deadline:</label>
+			</div>
+			<div class="col-sm-8">
+				<select name="deadline" id="deadline">		
+					<option value="10">2-4 hrs</option>
+					<option value="9">4-8 hrs</option>
+					<option value="8">8-12 hrs</option>
+					<option value="7.8">Within 24hrs</option>
+					<option value="5.8">2-3 Days</option>
+					<option value="4.6">4 Days</option>
+					<option value="4.44">5 Days</option>
+					<option value="4">1 Week</option>
+					<option value="3.8">1 Month</option>
+					<option value="3.6">2 Months and above</option>
+				</select>
+			</div>
+		</div>    
+	</div>
+	
+	<div class="type two">
+		
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="studyarea">Area of Study:</label>
+			</div>
+			<div class="col-sm-8">
+				<select name="studyarea" id="studyarea">	
+					<option value="1.2">Art</option>
+					<option value="1.35">Biology</option>
+					<option value="1.3">Business</option>
+					<option value="1.4">Chemistry</option>
+					<option value="1.33">Communications and Media</option>
+					<option value="1.4">Creative writing</option>
+					<option value="1.3">Economics</option>
+					<option value="1.3">Education</option>
+					<option value="1.8">Engineering</option>
+					<option value="1.1">English</option>
+					<option value="1.1">Ethics</option>
+					<option value="1.2">History</option>
+					<option value="1.3">Law</option>
+					<option value="1.1">Linguistics</option>
+					<option value="1.1">Literature</option>
+					<option value="1.2">Management</option>
+					<option value="1.2">Marketing</option>
+					<option value="1.25">Mathematics</option>
+					<option value="1.4">Medicine and Health</option>
+					<option value="1.1">Nature</option>
+					<option value="1.15">Philosophy</option>
+					<option value="1.23">Physics</option>
+					<option value="1.24">Political Science</option>
+					<option value="1.13">Psychology</option>
+					<option value="1.1">Religion and Theology</option>
+					<option value="1.1">Sociology</option>
+					<option value="1.3">Technology</option>
+					<option value="1.11">Tourism</option>
+					<option value="2">Programming</option>
+				</select>
+			</div>
+		</div>    
+	</div>
+	
+	<div class="typeone one">
+		
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="numberofpages">Number of Pages:</label>	
+			</div>
+			<div class="col-sm-8">
+				<input style="text-align:right" type="text" id="numberofpages" value="0" />	
+			</div>
+		</div>
+	</div>
+	
+	<div class="typeone two">
+		
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="totalcostperpage">Per Page:</label>			
+			</div>
+			<div class="col-sm-8">
+				<input style="text-align:right" type="text" value="0" id="totalcostperpage" disabled="disabled">				
+			</div>
+		</div>	
+	</div>
+	
+	<div class="typeone one">
+		
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="totalcost">Total:</label>			
+			</div>
+			<div class="col-sm-8">
+				<input style="text-align:right" type="text" value="0" id="totalcost" disabled="disabled"> 		
+			</div>
+		</div>	
+	</div>
+	
+	<div class="typeone two">
+		
+		<div class="row">
+			<div class="btn btn-warning discount text-center">
+				Discount <%=render "discounts/discount"%>%						
+			</div>
+		</div>	
+	</div>
+	
+	<div class="typeone one">
+		
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="discountapplied">Amount to pay after discount:</label>			
+			</div>
+			<div class="col-sm-8">
+				<input style="text-align:right" type="text" value="0" id="discountapplied" disabled="disabled"> 		
+			</div>
+		</div>	
+	</div>
+	
+</form>
