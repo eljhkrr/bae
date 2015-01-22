@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="EKG">
+    <title>Best Academic Essays</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/app-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/holder.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+
+
+  </head>
+  <body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavController">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" ng-click="isCollapsed = !isCollapsed">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <!--
+                <a class="navbar-brand" href="#" ng-show="isCollapsed"><img id="logo" src="images/logo-official.svg" /></a>
+                -->
+                <a class="navbar-brand" href="#" ng-show="!isCollapsed">Best Academic Essays</a>
+                <!--<a class="navbar-brand" href="#"><img id="logo" src="images/BAE-logo4.svg" /></a>-->
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" collapse="isCollapsed">
+                <!--
+                <form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search..." size="40">
+                  </div>
+                  
+                </form>
+                -->
+                <ul class="nav navbar-nav navbar-right">
+                  <!--<li><a href="#">Pricing</a></li>-->
+                  <li class="dropdown">
+                  	<button class="dropdown-toggle btn btn-default navbar-btn">Help <span class="caret"></span></button>
+                    <!-- <a href="#" class="dropdown-toggle">Help <span class="caret"></span></a> -->
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#how-it-works">How it works</a></li>
+                        <!--<li><a href="#">Another action</a></li>-->
+                        <li><a href="#">Contact Us</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Testimonials</a></li>
+                    </ul>     
+                  </li>
+                </ul>
+                <button type="button" class="btn btn-default btn-success navbar-btn navbar-right" ng-click="showLoginForm('lg')"><strong>Sign in/Register</strong></button>
+              </div><!-- /.navbar-collapse -->
+          </div>
+        </nav>
+        <!-- end nav -->
+        <section class="header-section row">
+          <div class="col-sm-12 col-md-5 header-box">
+            <div class="thumbnail">
+              <!--<img data-src="holder.js/300x300" alt="...">-->
+              <div class="caption">
+                <h1>Get your research done.</h1>
+                <h1>Get it done right.</h1>
+                <hr/>
+                <p>Professional research services at student prices!</p>
+                <ul class="hidden-xs">
+                  <li>
+                    <p><img src="images/check.svg" /></p>
+                    Quality<br/>work
+                  </li>
+                  <li>
+                    <p><img src="images/timely.svg" /></p>
+                    Timely<br/>delivery
+                  </li>
+                  <li>
+                    <p><img src="images/creative.svg" /></p>
+                    Creatively<br/>original
+                  </li>
+                </ul>
+                <!--
+                <p>Text</p>
+
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                -->
+              </div>
+            </div>
+          </div>
+          
+        </section>
+        
+        <!--
+        <section class="separator row">
+          
+            <svg id="btc" xmlns="http://www.w3.org/2000/svg" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 0 L50 100 L100 0 Z" />
+            </svg>
+          
+          
+        </section>
+        -->
+
+        <!--
+        <section class="section-2 row">
+          <div class="subsection-2 col-md-12">
+            <h2 class="section-header">Admission & Scholarship Essays</h2>
+            <div class="row">
+              <div class="section-2-img col-md-6">
+              <img class="img-responsive" src="images/essay.svg">
+              </div>
+
+              <div class="col-md-6">
+                <p>
+                  Get advice on improving your essay.
+                
+                <ul class="fa-ul">
+                  <li><i class="fa-li fa fa-check-square-o"></i>All programs: MBA, Graduate, Law, Medical, Engineering...</li>
+                  <li><i class="fa-li fa fa-check-square-o"></i>Free interview prep material</li>
+                  <li><i class="fa-li fa fa-check-square-o"></i>Graduate writers</li>
+                </ul>
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+          
+        </section>
+        -->
+
+        <section class="section-2 row" id="services">
+          <div class="subsection-2 col-md-12">
+            <h2 class="section-header">our services</h2>
+            <div class="row services">
+              <div class="col-md-4 col-xs-12">
+                <!--<img class="img-responsive" src="images/essay2.svg">-->
+                <h4>Admission & scholarship essays</h4>
+                
+                  <ul class="fa-ul">
+                    <li><i class="fa-li fa fa-check-square-o"></i>All programs: MBA, Graduate, Law, Medical, Engineering.</li>
+                    <li><i class="fa-li fa fa-check-square-o"></i>Free interview prep material.</li>
+                    <li><i class="fa-li fa fa-check-square-o"></i>Experienced admissions specialists.</li>
+                  </ul>
+                
+
+              </div>
+
+              <div class="col-md-4 col-xs-12">
+                <!--<img class="img-responsive" src="images/proofread.svg">-->
+                <h4>Proofreading</h4>
+                <p>
+                  Our professional writers can help identify and weed out any typos, mistakes or misleading lines of thought in your paper. All levels are catered for, from high school to PhD level work.
+                </p>
+
+              </div>
+
+              <div class="col-md-4 col-xs-12">
+                <!--<img class="img-responsive" src="images/tutor.svg">-->
+                <h4>Tutoring</h4>
+                <p>
+                We have qualified, graduate and dependaple tutors to help you work through any concepts that you may need to be tutored on.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          
+        </section>
+
+        <!--
+        <section class="section-3 row">
+          <h2 class="section-header">Proof-reading</h2>
+                    
+          <div class="row">
+            <div class="col-md-6">
+            
+              
+              
+              <p>
+                <button class="btn btn-success btn-large">Submit your paper now!</button>
+              </p>
+              
+            </div>
+
+
+            <div class="section-2-img col-md-6">
+              <img class="img-responsive" src="images/proofread.svg">
+            </div>
+          </div>
+        </section>
+        -->
+        
+        <section class="section-1 row" id="how-it-works">
+          
+          <div class="subsection-1">
+
+            <h2 class="hidden-xs section-header">simple 3-step order process</h2>
+            <h2 class="visible-xs">order process</h2>
+            
+            <div class="row v-m">
+                <div class="col-md-4 order-step-1 hidden-xs">
+                  <img class="num" src="images/num1.svg" />
+                  <div class="border-box">
+                      <p class="description">Problem with your paper?</p>
+                      <img src="images/student-stressed.svg" />
+                      <p class="description-long">Submit your paper (and create a free account)</p>
+                      <button class="btn btn-default">Submit now</button>
+                  </div>
+                </div>
+
+                <div class="col-md-4 order-step-2">
+                  <img class="num hidden-xs" src="images/num2.svg" />
+                  <div class="border-box">
+                    <!--<p>OK, allow us to help</p>-->
+                    <!--
+                    <ul>
+                      <li><i class="fa fa-comments-o"></i> Chat</li>
+
+                    </ul>
+                    -->
+                    <p class="description hidden-xs">Get it done</p>
+                    <ul>
+                      <li class="description-long">
+                        Set the budget for your work
+                      </li>
+                      <li>
+                        <img class="payment" src="images/budget.svg"/>
+                      </li>
+                      <li class="description-long">
+                        Our domain experts compete to handle your paper
+                      </li>
+                      <li>
+                        <img class="professionals-image" src="images/professionals.svg" />
+                      </li>
+                      <li class="description-long">
+                        wait for your order to be fulfilled
+                      </li>
+                      <li>
+                        <img class="order-wait-image" src="images/order-wait.svg" />
+                      </li>
+                    </ul>
+                    <button class="btn btn-default btn-success">Still unsure? Ask us <img src="images/support.svg" /></button>
+                    
+                  </div>
+                </div>
+
+                <div class="col-md-4 order-step-3 hidden-xs">
+                  <img class="num" src="images/num3.svg" />
+                  <div class="border-box">
+                    <p class="description">Happiness!</p>
+                    <img src="images/student-happy.svg"/>
+                    <p class="description-long">Receive your paper!</p>
+                    <button class="btn btn-default">Tell your friends <i class="fa fa-share-alt"></i></button>
+                  </div>
+
+                </div>
+            </div>
+          </div>
+        </section>
+
+        
+        
+        <footer class="row hidden-xs" ng-controller="FooterController">
+
+          <div class="row hidden-xs">
+            <div class="col-md-4 payment-icons">
+                <!--<h2><strong>We accept</strong></h2>-->
+                <ul class="payment-icons">
+                  <li><span class="fa fa-cc-mastercard"></span> <span class="fa fa-cc-paypal"></span></li>
+                  <li><span class="fa fa-cc-visa"></span> <span class="fa fa-cc-discover"></span></li>
+                  <li><span class="fa fa-cc-amex"></span> <span class="fa fa-credit-card"></span></li>
+                </ul>               
+            </div>
+
+            <div class="col-md-4">
+                <!--<h2><strong>Services</strong></h2>-->
+                <ul>
+                    <!--<li><button class="btn btn-link">Terms</button></li>-->
+                    <li><a href ng-click="openTerms('lg')">Terms & conditions</a></li>
+                    <li><a href ng-click="openPrivacyPolicy('lg')">Privacy policy</a></li>
+                    <li><a href ng-click="openFAQ('lg')">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <ul>
+                  <li><a href="#services">Admission & scholarship essays</a></li>
+                  <li><a href="#services">Proofreading</a></li>
+                  <li><a href="#services">Tutoring</a></li>
+                </ul>
+            </div>
+
+          </div>
+
+
+
+          <div class="row footer-line">
+            <div class="col-md-12">
+              <hr/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="social-icons">
+                <li><a href="#" class="fa fa-twitter circle"></a></li>
+                <li><a href="#" class="fa fa-facebook circle"></a></li>
+                <li><a href="#" class="fa fa-google-plus circle"></a></li>
+                <li><a href="#" class="fa fa-linkedin circle"></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-12">
+              <div class="copyright">
+                &copy; 2014
+                <br/>
+                The services and products we provide are meant to provide a guidline, and can only be used for research or study purposes only.
+                <br/>
+                Assistance is provided by 3-rd party writers and with no liability of BestAcademicEssays.com.
+
+              </div>
+            </div>
+          </div>
+
+        </footer>
+
+        <!-- Responsive footer -->
+        <footer class="visible-xs row">
+          <ul>
+            <!--<li><button class="btn btn-link">Terms</button></li>-->
+            <li><a href ng-click="openTerms('lg')">Terms</a></li>
+            <li><a href ng-click="openPrivacyPolicy('lg')">Privacy policy</a></li>
+            <li><a href ng-click="openFAQ('lg')">FAQ</a></li>
+          </ul>
+          <ul class="payment-icons">
+              <li><span class="fa fa-cc-mastercard"></span> </li>
+              <li><span class="fa fa-cc-paypal"></span></li>
+              <li><span class="fa fa-cc-visa"></span> </li>
+              <li><span class="fa fa-cc-discover"></span></li>
+              <li><span class="fa fa-cc-amex"></span> </li>
+              <li><span class="fa fa-credit-card"></span></li>
+          </ul>   
+          <ul>
+              <li><a href="#">Research paper</a></li>
+              <li><a href="#">Essay writing</a></li>
+              <li><a href="#">Dissertation</a></li>
+          </ul>   
+          <hr>
+          <ul class="social-icons">
+              <li><a href="#" class="fa fa-twitter circle"></a></li>
+              <li><a href="#" class="fa fa-facebook circle"></a></li>
+              <li><a href="#" class="fa fa-google-plus circle"></a></li>
+              <li><a href="#" class="fa fa-linkedin circle"></a></li>
+          </ul>    
+          <div class="copyright">
+            &copy; 2014
+            
+          </div>
+        </footer>
+        <!-- End responsive footer -->
+    </div>
+    
+  </body>
+</html>
